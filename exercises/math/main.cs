@@ -12,5 +12,8 @@ public static class main{
 		double power_e = euler_as_basis.e_to_pi;
 		Write($"e^pi = {power_e}\n");
 		Write($"ln(e^pi) = {Log(power_e)} (should be equal 3.14)\n");
+		double power_pi = pi_as_basis.pi_to_e;
+		Write($"pi^e = {power_pi}\n");
+		Write($"(pi^e)^(1/e) = {Pow(power_pi,1/E)} (should be equal 3.14)\n");
 	}
 }
