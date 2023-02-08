@@ -1,8 +1,17 @@
 Sqareroot(2) = 1.4142135623731
 Sqareroot(2)^2 = 2 (should be equal 2)
+
 2^(1/5) = 1.14869835499704
 (2^(1/5))^5 = 2 (should be equal 2)
+
 e^pi = 23.1406926327793
 ln(e^pi) = 3.14159265358979 (should be equal 3.14)
+
 pi^e = 22.459157718361
 (pi^e)^(1/e) = 3.14159265358979 (should be equal 3.14)
+
+Gamma-function approximations with the Stirling-Formula:
+gamma(1) = 0.999999989064903 (should be 1),
+gamma(2) = 0.999999989064903 (should be 1),
+gamma(3) = 1.99999997812981 (should be 2),
+gamma(10) = 362879.997652016 (should be 362880),
