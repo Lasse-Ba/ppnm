@@ -1,0 +1,25 @@
+my max int   = 2147483647
+int.MaxValue = 2147483647
+
+my min int   = -2147483648
+int.MinValue = -2147483648
+
+my max double        = 2.22044604925031E-16
+machine double 2^-52 = 2.22044604925031E-16
+
+my max float        = 1.192093E-07
+machine float 2^-23 = 1.19209289550781E-07
+
+sumA-1 = 0.000000e+000 should be 1.110223e-010
+sumB-1 = 1.110223e-010 should be 1.110223e-010
+
+d1=7.999999999999999e-001
+d2=8.000000000000000e-001
+d1==d2 ? => False
+
+Abs(a-b): 9.99999971718069E-10
+Abs(a-b)/(Abs(a)+Abs(b)): 4.99999986109034E-10
+approx(1, 1-1e-9) = True should be True
+Abs(a-b): 1
+Abs(a-b)/(Abs(a)+Abs(b)): 0.333333333333333
+approx(1, 2) = False should be False
