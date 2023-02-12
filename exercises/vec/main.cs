@@ -24,7 +24,7 @@ public static class main{
 		vec w=u*2;
 		w.print("u*2= ");
 		vec w2 = u+6*v -w;
-		w2.print   ("w2 = ");
+		w2.print   ("w2 = u+6*v = ");
 		(-u).print ("-u = ");
 		WriteLine($"u%v = {u%v}");
 		WriteLine($"u.dot(v) = {u.dot(v)}");
@@ -32,5 +32,7 @@ public static class main{
 		(v.cross(u)).print("cross product = ");
 		WriteLine($"norm(v) = {v.norm()}");
 		WriteLine($"norm(u) = {u.norm()}");
+		WriteLine($"approx(u,v) = {u.approx(v)}");
+		WriteLine($"approx(u,u) = {u.approx(u)}");
 	}
 }
