@@ -16,5 +16,7 @@ public static class main{
 		WriteLine($"i^i = {cmath.pow(y,y)} should be e^(-pi/2)=0.2078");
 		WriteLine($"ln(i) = {cmath.log(y)} should be i*pi/2=1.57i");
 		WriteLine($"sin(i*pi) = {cmath.sin(PI*y)} should be i*sinh(pi)=11.55*i");
+		WriteLine($"sinh(i) = {cmath.sinh(y)} should be i*sin(i)=0.84*i");
+		WriteLine($"cosh(i) = {cmath.cosh(y)} should be cos(1)=0.54");
 	}
 }

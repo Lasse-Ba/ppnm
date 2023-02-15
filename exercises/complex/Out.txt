@@ -8,3 +8,5 @@ exp(pi*i) = -1+1.22e-16i should be -1
 i^i = 0.208+0i should be e^(-pi/2)=0.2078
 ln(i) = 0+1.57i should be i*pi/2=1.57i
 sin(i*pi) = 0+11.5i should be i*sinh(pi)=11.55*i
+sinh(i) = 0+0.841i should be i*sin(i)=0.84*i
+cosh(i) = 0.54+0i should be cos(1)=0.54
