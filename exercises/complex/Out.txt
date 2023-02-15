@@ -1,0 +1,10 @@
+1 =  1+0i
+-1 =  -1+0i
+i =  0+1i
+sqrt(-1) = 6.12e-17+-1i should be ±i
+sqrt(i) = 0.707+0.707i should be (1+i)/sqrt(2)
+exp(i) = 0.54+0.841i should be cos(1)+isin(1) = 0.54+i*0.84
+exp(pi*i) = -1+1.22e-16i should be -1
+i^i = 0.208+0i should be e^(-pi/2)=0.2078
+ln(i) = 0+1.57i should be i*pi/2=1.57i
+sin(i*pi) = 0+11.5i should be i*sinh(pi)=11.55*i
