@@ -1,4 +1,8 @@
-hello
+reading from stdin to stdout
+1 0.841470984807897
+2 0.909297426825682
+3 0.141120008059867
+reading from a given file writing to a given file
 hello
 world
 -input:infile.txt
@@ -10,10 +14,11 @@ world
 4.00e+00
 5.00e+00
 6.00e+00
+reading from stdin to stdout
 1 0.841470984807897
 2 0.909297426825682
 3 0.141120008059867
-hello
+reading from a given file writing to a given file
 hello
 world
 -input:infile.txt
@@ -25,10 +30,11 @@ world
 4.00e+00
 5.00e+00
 6.00e+00
+reading from stdin to stdout
 1 0.841470984807897
 2 0.909297426825682
 3 0.141120008059867
-hello
+reading from a given file writing to a given file
 hello
 world
 -input:infile.txt
@@ -37,6 +43,3 @@ world
 7.00e+00
 8.00e+00
 9.00e+00
-1 0.841470984807897
-2 0.909297426825682
-3 0.141120008059867
