@@ -11,7 +11,7 @@ public class genlist<T>{
 	}
 
 	public void remove(int i){
-		T[] newdata = new T[size];
+		T[] newdata = new T[size-1];
 		for(int j = 0; j<size; j++){
 			if(j<i) {newdata[j] = data[j];}
 			if(j>i) {newdata[j-1] = data[j];}
