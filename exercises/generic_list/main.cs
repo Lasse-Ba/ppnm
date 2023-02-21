@@ -18,5 +18,23 @@ class main{
 			foreach(var number in numbers)Write($"{number : 0.00e+00;-0.00e+00} ");
 			WriteLine();
 				}
+		
+
+		genlist<double> listd = new genlist<double>();
+		listd.add(0.0);
+		listd.add(1.0);
+		listd.add(2.0);
+		listd.add(5.0);
+		listd.add(4.0);
+		WriteLine();
+		for(int j=0;j<listd.size;j++){
+			double x = listd[j];
+			WriteLine($"List element {j}: {x} ");
+		}
+		listd.remove(1);
+		for(int k=0; k<listd.size; k++){
+			double y = listd[k];
+			WriteLine($"List element removed {k}: {y}, gives ");
+		}
 	}
 }
