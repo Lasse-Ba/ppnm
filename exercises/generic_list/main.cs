@@ -27,6 +27,7 @@ class main{
 		listd.add(35.0);
 		listd.add(325.0);
 		WriteLine();
+		WriteLine("Remove the third entry of the list");
 		for(int j=0;j<listd.size;j++){
 			double x = listd[j];
 			WriteLine($"List element {j}: {x} ");
@@ -34,7 +35,25 @@ class main{
 		listd.remove(2);
 		for(int k=0; k<listd.size; k++){
 			double y = listd[k];
-			WriteLine($"List element removed {k}: {y}, gives ");
+			WriteLine($"List with removed 2nd element {k}: {y} ");
 		}
+
+		genlist<double> list_doubled = new genlist<double>();
+		list_doubled.add_double(24.0);
+		/*
+		list_doubled.add_double(236.0);
+		list_doubled.add_double(26.0);
+		list_doubled.add_double(234.0);
+		list_doubled.add_double(2346.0);
+		list_doubled.add_double(4.0);
+		list_doubled.add_double(6.0);
+		list_doubled.add_double(644.0);
+		list_doubled.add_double(346.0);
+		list_doubled.add_double(246.0);
+		
+		for(int l=0;l<list_doubled.size_double;l++){
+			double x = list_doubled[l];
+			WriteLine($"List element {l}: {x} ");
+		}*/
 	}
 }

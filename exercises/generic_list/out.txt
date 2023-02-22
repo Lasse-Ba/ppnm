@@ -3,12 +3,13 @@
  3.04e+01  9.98e+01  6.72e+00 
 -1.33e+00  9.63e+01  2.23e+00 
 
+Remove the third entry of the list
 List element 0: 57 
 List element 1: 4 
 List element 2: 52 
 List element 3: 35 
 List element 4: 325 
-List element removed 0: 57, gives 
-List element removed 1: 4, gives 
-List element removed 2: 35, gives 
-List element removed 3: 325, gives 
+List with removed 2nd element 0: 57 
+List with removed 2nd element 1: 4 
+List with removed 2nd element 2: 35 
+List with removed 2nd element 3: 325 

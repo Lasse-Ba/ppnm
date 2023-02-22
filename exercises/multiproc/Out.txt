@@ -1,0 +1,32 @@
+
+
+
+nterms=200000000 nthreads=1
+total sum = 19.6910435919144
+real 1.12
+user 0.99
+sys 0.03
+
+
+
+nterms=200000000 nthreads=2
+total sum = 19.6910435919123
+real 2.20
+user 4.04
+sys 0.02
+
+
+
+nterms=200000000 nthreads=3
+total sum = 19.691043591912
+real 1.38
+user 2.87
+sys 0.00
+
+
+
+nterms=200000000 nthreads=4
+total sum = 19.691043591913
+real 1.23
+user 4.24
+sys 0.00
