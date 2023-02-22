@@ -3,30 +3,38 @@
 
 nterms=200000000 nthreads=1
 total sum = 19.6910435919144
-real 1.12
-user 0.99
+real 1.11
+user 1.00
 sys 0.03
 
 
 
 nterms=200000000 nthreads=2
 total sum = 19.6910435919123
-real 2.20
-user 4.04
-sys 0.02
+real 2.33
+user 4.31
+sys 0.03
 
 
 
 nterms=200000000 nthreads=3
 total sum = 19.691043591912
-real 1.38
-user 2.87
-sys 0.00
+real 1.52
+user 3.21
+sys 0.01
 
 
 
 nterms=200000000 nthreads=4
 total sum = 19.691043591913
-real 1.23
-user 4.24
-sys 0.00
+real 1.37
+user 4.75
+sys 0.06
+
+
+
+Parallel.For with nterms=200000000
+nterms=200000000 sum=13.897845636935
+real 2.17
+user 16.14
+sys 0.02

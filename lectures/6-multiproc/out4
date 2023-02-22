@@ -1,0 +1,6 @@
+nterms=200000000 nthreads=1
+x.a=1 x.b=200000001
+master thread: waiting for other threads...
+thread number 1 a = 1 b=200000001
+thread number 1 partial sume = 19.6910435919144
+total sum = 19.6910435919144
