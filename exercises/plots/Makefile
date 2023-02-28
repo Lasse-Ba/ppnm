@@ -1,4 +1,4 @@
-all: Gamma.svg LnGamma.svg Erf.svg
+all: Gamma.svg LnGamma.svg Erf.svg 
 
 Gamma.svg : gamma.gpi gamma.data factorials.data
 	gnuplot $<
@@ -9,6 +9,8 @@ LnGamma.svg : lngamma.gpi lngamma_data.data
 Erf.svg : erf.gpi erf_data.data
 	gnuplot $<
 
+
+
 gamma.data : main.exe
 	mono $< > $@
 
@@ -17,6 +19,9 @@ lngamma_data.data : lngamma_data.exe
 
 erf_data.data : erf_data.exe
 	mono $< > $@
+
+
+
 
 main.exe : main.cs sfuns.dll
 	mcs -target:exe -out:$@ \
@@ -30,8 +35,12 @@ erf_data.exe : erf_data.cs sfuns.dll
 	mcs -target:exe -out:$@ \
 		$(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
 
-sfuns.dll : gamma.cs erf.cs lngamma.cs
+
+
+sfuns.dll : gamma.cs erf.cs lngamma.cs 
 	mcs -target:library -out:$@ $^
+
+
 
 factorials.data : Makefile
 	>$@

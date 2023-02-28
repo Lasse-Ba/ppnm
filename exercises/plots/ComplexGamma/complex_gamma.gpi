@@ -1,0 +1,20 @@
+set terminal svg
+unset key
+set output "ComplexGamma.svg"
+set xlabel "Re(x)"
+set ylabel "Im(x)"
+set zlabel "|Gamma(x)|"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set isosamples 10,10; set samples 10,10;
+set hidden3d
+#set pm3d
+set xrange [5:-5]
+set yrange [-5:5]
+set zrange [0:6]
+set title "Complex Gamma function"
+splot "complex_gamma.data" with lines
+# "gamma.data" with lines linetype 1 title "theory" \
+#,"factorials.data" using ($1+1):($2) with points pointtype 4 title "experiment" \
+#, gamma(x) with lines linetype 2 title "build in gamma"
