@@ -6,6 +6,7 @@ using static System.Random;
 class main{
     public static void Main(){
         test_decomp();
+        test_solve();
     }
 
     public static void test_decomp(){
@@ -20,7 +21,7 @@ class main{
                 A[i,j]=rnd.Next(10);
             }
         }
-
+        WriteLine("Gram-Schmidt orthonormalization");
         WriteLine("Random matrix A");
         A.print();
         WriteLine();
@@ -43,6 +44,39 @@ class main{
         matrix QtimesR = linsys.Q*linsys.R;
         QtimesR.print();
 		WriteLine();
+        WriteLine();
+
+    }
+
+    public static void test_solve(){
+        int n = 4;
+
+        matrix A = new matrix(n,n);
+        vector b = new vector(n);
+        Random rnd = new Random();
+        for(int i=0; i<n; i++){
+            b[i] = rnd.Next(10);
+            for(int j=0; j<n; j++){
+                A[i,j]=rnd.Next(10);
+            }
+        }
+        WriteLine("_____________________________");
+        WriteLine("Solve the equation QRx=b");
+        WriteLine($"Matrix A: ");
+	    A.print();
+		WriteLine($"Vector b: ");
+		b.print();
+              		
+        WriteLine("Solving Ax=b.");
+		QRGS linsys = new QRGS(A);
+		vector x = linsys.solve(b);
+
+		WriteLine($"A*x is (should be equal to b):");
+        var Ax = A*x;
+        Ax.print();
+
+
+        
 
     }
 }
