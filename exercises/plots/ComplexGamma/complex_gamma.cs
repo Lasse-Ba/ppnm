@@ -12,8 +12,8 @@ public static class main{
     }
 
     public static void Main(){
-	    for(double x= -5+1.0/32; x<=5; x+=1.0/16){
-		    for(double y= -5+1.0/32;y<=5;y+=1.0/16){
+	    for(double x= -5+1.0/16; x<=5; x+=1.0/8){
+		    for(double y= -5+1.0/16;y<=5;y+=1.0/8){
 			    WriteLine($"{x} {y} {cmath.abs(complex_gamma(new complex(x,y)))}");
 		    }
             WriteLine("");
