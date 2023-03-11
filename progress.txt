@@ -3,3 +3,5 @@ Exercises:
  - Complex Gamma aufräumen
 
 Homeworks:
+ - Linear Equations: A, B
+ - Eigenvalues:
