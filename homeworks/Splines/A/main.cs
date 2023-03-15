@@ -12,8 +12,8 @@ class main{
         double[] x = new double[n];
         double[] y = new double[n];
         for(int j=0; j<n; j++){
-            x[j] = j/4.0;
-            y[j] = Sin(j/4.0);
+            x[j] = j/2.0;
+            y[j] = Sin(j/2.0);
         }
 
         WriteLine("Generate data points, following a sin(x)");
