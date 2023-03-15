@@ -1,0 +1,5 @@
+set terminal svg
+plot "data.data" index 0 using 1:2 with points pointtype 5 pointsize 2 title "sin(x)"\
+,"data.data" index 1 using 1:2 with lines title "linterp"\
+,"data.data" index 1 using 1:3 with lines title "integral"\
+,-cos(x)+1 with points title "-cos(x)+c"\
