@@ -15,7 +15,7 @@ class main{
             x[j] = j/2.0;
             y[j] = Sin(j/2.0);
         }
-        for(double z=0.0+1/32; z<6; z+=1.0/16){
+        for(double z=0.0+1/32; z<7; z+=1.0/16){
             WriteLine($"{z} {spline.linterp(x,y,z)} {spline.linterpInteg(x,y,z)}");
         }
         
