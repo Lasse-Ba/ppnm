@@ -25,7 +25,11 @@ class main{
         }
 
         ///Do the least square fit
-        vector coeffs = lsfit.lsfitvec(fs, t, logy, dlogy);
+        var lsfit_fit = lsfit.lsfitvec(fs, t, logy, dlogy);
+        vector coeffs = lsfit_fit.Item1;
+        matrix covs = lsfit_fit.Item2;
+        vector errs = lsfit_fit.Item3;
+        double halflife_err = Log(2)*errs[1]/Pow(coeffs[1],2);
 
         ///Write given data
         for(int i=0; i<y.Length; i++){
@@ -42,12 +46,23 @@ class main{
         WriteLine();
         WriteLine();
 
+        ///Calculate Data points with the errors
+        for(double i=1.0; i<16; i+=1.0/4.0){
+            WriteLine($"{i} {Exp(coeffs[0]  +errs[0]) * Exp((coeffs[1]+errs[1])*i)}");
+        }
+        WriteLine();
+        WriteLine();
+
+        for(double i=1.0; i<16; i+=1.0/4.0){
+            WriteLine($"{i} {Exp(coeffs[0] - errs[0]) * Exp((coeffs[1]-errs[1])*i)}");
+        }
+        WriteLine();
+        WriteLine();
+
         
         
         		
-        WriteLine($"Half-life time from fit for 224-Ra: {-1/coeffs[1]} days");	
-		WriteLine("Half-life of 224-Ra is actually 3.5 days, according to PubChem.");
-        WriteLine($"This means, the lifetime from the fit is {Round(((-1/coeffs[1]-3.5)/3.5)*100, 2)}% larger than the actual lifetime.");
+
 
 
     }

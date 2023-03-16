@@ -25,7 +25,11 @@ class main{
         }
 
         ///Do the least square fit
-        vector coeffs = lsfit.lsfitvec(fs, t, logy, dlogy);
+        var lsfit_fit = lsfit.lsfitvec(fs, t, logy, dlogy);
+        vector coeffs = lsfit_fit.Item1;
+        matrix covs = lsfit_fit.Item2;
+        vector errs = lsfit_fit.Item3;
+        double halflife_err = Log(2)*errs[1]/Pow(coeffs[1],2);
 
         ///Write given data
         for(int i=0; i<y.Length; i++){
@@ -45,9 +49,16 @@ class main{
         
         
         		
-        WriteLine($"Half-life time from fit for 224-Ra: {-1/coeffs[1]} days");	
+        WriteLine($"Half-life time from fit for 224-Ra: {Round(-Log(2)/coeffs[1],2)} +/- {Round(halflife_err,2)} days");	
 		WriteLine("Half-life of 224-Ra is actually 3.5 days, according to PubChem.");
-        WriteLine($"This means, the lifetime from the fit is {Round(((-1/coeffs[1]-3.5)/3.5)*100, 2)}% larger than the actual lifetime.");
+        WriteLine($"Uncertainties on fitting coefficients (fit to f(x) = c1 + c2*x):");
+		WriteLine($"∆c1 = {errs[0]}");
+		WriteLine($"∆c2 = {errs[1]}\n");
+		WriteLine($"The actual value and the measured differ by:");
+		WriteLine($"lambda = |t_exp - t_measured|/Δt_exp ={Round((-Log(2)/coeffs[1]-3.5)/halflife_err,2)}  \nSo they do not agree within the uncertainities.\n");
+		WriteLine($"Covariance matrix:");
+		covs.print();
+
 
 
     }
