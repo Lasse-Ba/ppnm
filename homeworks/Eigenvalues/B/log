@@ -1,15 +1,15 @@
 \
 set term png;\
-set out "r_convergence.png";\
-set title "Calculated energies for hydrogen with respect to rmax";\
-set xlabel "r_{max}";\
+set out "dr_convergence.png";\
+set title "Calculated energies for hydrogen with respect to dr";\
+set xlabel "dr";\
 set ylabel "Energies";\
 set key out;\
-set xrange [-1:30];\
-plot \
-"conv_rmax.txt" index 0 using 1:2 with lines title "E_0"\
-,"conv_rmax.txt" index 0 using 1:3 with lines title "E_1"\
-,"conv_rmax.txt" index 0 using 1:4 with lines title "E_2"\
+set grid;\
+plot [] [-0.51:]\
+"conv_dr.txt" index 0 using 1:2 with lines title "E_0"\
+,"conv_dr.txt" index 0 using 1:3 with lines title "E_1"\
+,"conv_dr.txt" index 0 using 1:4 with lines title "E_2"\
 ,-1.0/2 with lines title "exact E_0"\
 ,-1.0/8 with lines title "exact E_1"\
 ,-1.0/18 with lines title "exact E_2"\

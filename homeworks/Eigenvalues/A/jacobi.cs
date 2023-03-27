@@ -41,10 +41,8 @@ public class jacobi{
 					double new_aqq = s*s*app + 2*s*c*apq + c*c*aqq;
 					if(new_app != app || new_aqq != aqq){
 						changed=true;
-						// Diagonal matrix:
 						timesJ(D,p,q,theta);
 						Jtimes(D,p,q,-theta);
-						// Matrix of eigenvectors:
 						timesJ(V,p,q,theta);
 					}
 				}		

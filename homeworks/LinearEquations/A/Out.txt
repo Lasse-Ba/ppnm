@@ -1,40 +1,44 @@
 Gram-Schmidt orthonormalization
 Random matrix A
 
-         1          3          8 
-         1          9          6 
-         7          2          4 
-         1          7          0 
+         6          9          7 
+         5          9          5 
+         1          1          0 
+         7          2          1 
 
 Factorize A into QR:
 R is (should be upper triangular):
 
-      7.21       4.58       5.82 
-         0         11       5.37 
-         0          0        7.3 
+      10.5       10.8       7.02 
+         0       7.07       4.81 
+         0          0       1.58 
 
-Q^T*Q is (should be I):
-         1  -1.25e-16  -9.71e-17 
- -1.25e-16          1   5.55e-17 
- -9.71e-17   5.55e-17          1 
+Q^T*Q should be I: True 
+with Q^TQ = 
+         1  -1.11e-16  -2.98e-16 
+ -1.11e-16          1  -5.97e-16 
+ -2.98e-16  -5.97e-16          1 
 
-Q*R is (should be A)
-         1          3          8 
-         1          9          6 
-         7          2          4 
-         1          7  -4.44e-16 
+Q*R should be A: True
+with Q*R=
+         6          9          7 
+         5          9          5 
+         1          1          0 
+         7          2          1 
 
 
 _____________________________
 Solve the equation QRx=b
 Matrix A: 
 
-         4          2          0          4 
-         4          0          8          4 
-         9          8          5          2 
-         4          5          1          6 
+         3          7          4          4 
+         0          9          0          9 
+         7          1          5          4 
+         8          7          5          0 
 Vector b: 
-         1          9          0          7 
+         7          6          5          2 
+
 Solving Ax=b.
-A*x is (should be equal to b):
-         1          9   1.78e-15          7 
+A*x should be equal to b: True
+with Ax =
+         7          6          5          2 

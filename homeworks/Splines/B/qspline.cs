@@ -69,7 +69,7 @@ using static System.Math;
             for(int i=0; i<z_bin; i++){
                 int_sum += y[i]*(x[i+1]-x[i]) + b[i]*(x[i+1]-x[i])*(x[i+1]-x[i])/2 + c[i]*Pow((x[i+1]-x[i]),3)/3;
             }
-            int_sum+= y[z_bin]*(z-x[z_bin]) + b[z_bin]*(z-x[z_bin])*(z-x[z_bin])/2 + c[z_bin]*Pow((z-x[z_bin]),3)/3;
+            int_sum += y[z_bin]*(z-x[z_bin]) + b[z_bin]*(z-x[z_bin])*(z-x[z_bin])/2 + c[z_bin]*Pow((z-x[z_bin]),3)/3;
             return int_sum;
         }
 

@@ -8,7 +8,6 @@ public class QRGS{
     public QRGS(matrix a){
         Q=a.copy();
         int m = a.size2;
-        //WriteLine($"m={m}");
         R = new matrix(m,m);
         for(int i=0;i<m;i++){
             R[i,i] = Q[i].norm();

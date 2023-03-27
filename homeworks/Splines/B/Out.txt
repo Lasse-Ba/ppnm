@@ -21,5 +21,38 @@ Generate data points
 
 
 Pick a z, interploate and integrate the data points
-z=2.4 f(z)=5.52 Integral 4.216
+z=2.4 f(z)=1 Integral 1.4
 
+-------------------------------
+Compare the paramters manually calculated {b_i,c_i} with those calculated by the program
+
+
+For f(x)=1:
+manually calculated c_i:
+0 0 0 0 
+qspline calculated c_i:
+0 0 0 0 
+manually calculated b_i:
+0 0 0 0 
+qspline calculated b_i:
+0 0 0 0 
+
+For f(x)=x:
+manually calculated c_i:
+0 0 0 0 
+qspline calculated c_i:
+0 0 0 0 
+manually calculated b_i:
+1 1 1 1 
+qspline calculated b_i:
+1 1 1 1 
+
+For f(x)=x^2:
+manually calculated c_i:
+1 1 1 1 
+qspline calculated c_i:
+1 2 2 1 
+manually calculated b_i:
+2 4 6 8 
+qspline calculated b_i:
+2 3 5 8 

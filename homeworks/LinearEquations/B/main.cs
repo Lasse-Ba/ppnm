@@ -5,8 +5,8 @@ using static System.Random;
 
 class main{
     public static void Main(){
-        test_decomp();
-        test_solve();
+        //test_decomp();
+        //test_solve();
         test_inverse();
     }
 
@@ -23,27 +23,23 @@ class main{
                 A[i,j]=rnd.Next(10);
             }
         }
-        WriteLine("Gram-Schmidt orthonormalization");
+         WriteLine("Gram-Schmidt orthonormalization");
         WriteLine("Random matrix A");
         A.print();
         WriteLine();
 
         WriteLine("Factorize A into QR:");
 		QRGS linsys = new QRGS(A);
-		//WriteLine("Q:");
-		//linsys.Q.print();
-        //linsys.Q.transpose().print();
 		WriteLine("R is (should be upper triangular):");
 		linsys.R.print();
 		matrix QtQ = linsys.Q.transpose()*linsys.Q;
         WriteLine();
 
-        Write("Q^T*Q is (should be I):");
+        Write($"Q^T*Q should be I: {QtQ.approx(matrix.id(m))} \nwith Q^TQ = ");
         QtQ.print();
-		//WriteLine($"Q*R is approximately A: {(linsys.Q*linsys.R).approx(A)}");
         WriteLine();
-        Write($"Q*R is (should be A)");
         matrix QtimesR = linsys.Q*linsys.R;
+        Write($"Q*R should be A: {QtimesR.approx(A)}\nwith Q*R=");
         QtimesR.print();
 		WriteLine();
         WriteLine();
@@ -69,12 +65,12 @@ class main{
 		WriteLine($"Vector b: ");
 		b.print();
               		
-        WriteLine("Solving Ax=b.");
+        WriteLine("\nSolving Ax=b.");
 		QRGS linsys = new QRGS(A);
 		vector x = linsys.solve(b);
 
-		WriteLine($"A*x is (should be equal to b):");
         var Ax = A*x;
+		WriteLine($"A*x should be equal to b: {b.approx(Ax)}\nwith Ax =");
         Ax.print();
         WriteLine();
         WriteLine();
@@ -104,7 +100,7 @@ class main{
         B.print();
         WriteLine();
         var AB = A*B;
-        WriteLine("The product of  A*B is (should be I):");
+        WriteLine($"The product of  A*B should be I:{AB.approx(matrix.id(n))}\nwith A*B=");
         AB.print();
     }
     

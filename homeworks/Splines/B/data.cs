@@ -13,7 +13,7 @@ class main{
         double[] y = new double[n];
         for(int j=0; j<n; j++){
             x[j] = j/2.0;
-            y[j] = Sin(j/2.0);
+            y[j] = Cos(j/2.0);
         }
 
         for(int j=0; j<n; j++){
@@ -23,7 +23,7 @@ class main{
         WriteLine();
         
         qspline q = new qspline(x,y);
-        for(double z=0.0+1/32; z<7; z+=1.0/32){
+        for(double z=0.0+1.0/8; z<7; z+=1.0/8){
             WriteLine($"{z} {q.evaluate(z)} {q.integral(z)} {q.derivative(z)}");
         }
         

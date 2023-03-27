@@ -1,0 +1,12 @@
+set terminal svg
+set key bottom right
+set output "scipy_pendulum.svg"
+set xlabel "t"
+set ylabel "Solution of the ODE"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set xrange [0:10]
+set title "Recreation of the Scipy example of a damped pendulum"
+plot 'Out.txt' index 1 using 1:2 with lines title "theta(t)"\
+,'Out.txt' index 1 using 1:3 with lines title "omega(t)"
