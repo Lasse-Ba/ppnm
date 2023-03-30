@@ -4,10 +4,14 @@ using static System.Math;
 
 public class main{
     public static void Main(){
+        WriteLine("_______________________________________");
+        WriteLine("Compute different integrals");
         integrate_sqrt();
         inv_sqrt();
         complicated_sqrt();
         ln_sqrt();
+        WriteLine("_______________________________________");
+        WriteLine("The error function is plottet in 'erf.svg' together with tabulated values\nfrom Wikipedia. They fit well to each other except at +-1 where the funtion is not\nsmooth because I change the method to calculate the error function.");
         WriteLine("VGL mit Plot aufgabe fehlt noch");
         WriteLine();
         WriteLine();

@@ -1,13 +1,14 @@
 set terminal svg
-set key top right
+set key top left
 set output "erf.svg"
 set xlabel "x"
 set ylabel "erf(x)"
 set tics out
 set xzeroaxis
 set yzeroaxis
-set samples 800
+set yrange [-1.1:1.1]
 set title "Plot of the error function"
 plot 'Out.txt' using 1:2 with lines title "erf"\
+, 'erf_table.txt' using 1:2 with points pt 1 title "data from Wikipedia"
 
 
