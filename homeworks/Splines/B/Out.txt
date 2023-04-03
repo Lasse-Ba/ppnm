@@ -51,8 +51,8 @@ For f(x)=x^2:
 manually calculated c_i:
 1 1 1 1 
 qspline calculated c_i:
-1 2 2 1 
+1 1 1 1 
 manually calculated b_i:
 2 4 6 8 
 qspline calculated b_i:
-2 3 5 8 
+2 4 6 8 

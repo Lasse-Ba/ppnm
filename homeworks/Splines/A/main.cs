@@ -13,7 +13,7 @@ class main{
         double[] y = new double[n];
         for(int j=0; j<n; j++){
             x[j] = j/2.0;
-            y[j] = Cos(j/2.0);
+            y[j] = Sin(j/2.0);
         }
 
         WriteLine("Generate data points, following a sin(x)");
