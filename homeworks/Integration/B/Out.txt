@@ -1,0 +1,12 @@
+_______________________________________
+Testing Clenshaw-Curtis
+The integral of 1/sqrt(x) from 0 to 1 is 1.9995161175042 with 4292 evaluations
+The integral of ln(x)/sqrt(x) from 0 to 1 is -3.99740428719504 with 4292 evaluations
+The Clenshaw-Curtis integral of 1/sqrt(x) from 0 to 1 is 1.99987031834155 with 8 evaluations
+The Clenshaw-Curtis integral of ln(x)/sqrt(x) from 0 to 1 is -3.98144663054977 with 28 evaluations
+
+With Python:
+Integral of 1/sqrt(x) is 1.9999999999999984 with 231 evolutions
+Integral of ln(x)/sqrt(x) is -4.000000000000075 with 231 evolutions
+Python needs less evaluations than the recursive adaptive integrator
+but more then the Clenshaw Curtis algorithm
