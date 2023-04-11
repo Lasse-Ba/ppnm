@@ -9,10 +9,10 @@ fixed_dr.svg : fixed_dr.gpi Out.txt
 wavefunctions.svg : wavefunctions.gpi Out.txt
 	gnuplot $<
 
-Out.txt : main1.exe
+Out.txt : main.exe
 	mono $< > $@
 
-main1.exe: main1.cs matrix.dll jacobi.dll
+main.exe: main.cs matrix.dll jacobi.dll
 	mcs -target:exe -reference:matrix.dll -reference:jacobi.dll $<
 
 jacobi.dll: jacobi.cs matrix.dll

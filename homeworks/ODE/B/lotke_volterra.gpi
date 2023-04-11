@@ -1,0 +1,12 @@
+set terminal svg
+set key top left
+set output "lotke_volterra.svg"
+set xlabel "t"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set xrange [0:15]
+set yrange [0:13]
+set title "Solution of Lotke-Volterra System"
+plot 'Out.txt' index 1 using 1:2 with lines title "x"\
+,'Out.txt' index 1 using 1:3 with lines title "y"

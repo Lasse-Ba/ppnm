@@ -4,7 +4,7 @@ Exercises:
 
 Homeworks:
  - Linear Equations: A, B, C
- - Eigenvalues: A  
+ - Eigenvalues: A, B
  - Least Square : A, B, C muss noch aufgeräumt werden
  - spline: A, B-Vergleich fehlt noch, C
  - ODE: A, B - nochmal zweite Variante ausprobieren
