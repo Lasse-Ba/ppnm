@@ -5,7 +5,7 @@ using static System.Random;
 
 class main{
     static double rmax = 10;
-    static int npoints = 10;
+    static int npoints = 30;
     static double dr = rmax/npoints;
     static vector r = new vector(npoints);
 
@@ -20,7 +20,7 @@ class main{
 		matrix V;
 		(D,V) = jacobi.cyclic(H);
         
-        double lowestE = new double 1e10;
+        double lowestE = new double 1e10*1.0;
         int lowestIndex = 0;
         for(int i = 0; i < npoints; i++){
             if(D[i,i] < lowestE){

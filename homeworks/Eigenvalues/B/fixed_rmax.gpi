@@ -1,0 +1,11 @@
+set terminal svg
+set key top left
+set output "fixed_rmax.svg"
+set xlabel "dr"
+set ylabel "ε_0"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set logscale x
+set title "Fixed r_{max} = 25"
+plot 'Out.txt' index 0 using 1:2 with lines title "eigenenergy"

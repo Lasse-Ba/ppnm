@@ -21,8 +21,9 @@ public class genlist<T>{
 		data = newdata;
 	}
 	
+	/*Commented out for ode exercise
 	public genlist(){data = new T[capacity];}
-	public void add_double(T item){ /* add item to list */
+	public void add_double(T item){ /* add item to list *//*
 		if(size_double==capacity){
 			T[] newdata = new T[capacity*=2];
 			for(int k = 0; k < size_double; k++){
@@ -33,4 +34,5 @@ public class genlist<T>{
 		data[size_double]=item;
 		size_double++;
 	}
+	*/
 }

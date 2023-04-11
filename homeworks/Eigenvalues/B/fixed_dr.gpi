@@ -1,0 +1,10 @@
+set terminal svg
+set key top left
+set output "fixed_dr.svg"
+set xlabel "r_{max"
+set ylabel "ε_0"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Fixed Delta r = 0.1"
+plot 'Out.txt' index 1 using 1:2 with lines title "eigenenergy"
