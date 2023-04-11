@@ -63,12 +63,14 @@ class main{
 		WriteLine($"Vector b: ");
 		b.print();
               		
-        WriteLine("\nSolving Ax=b.");
+        WriteLine("\nSolving Ax=b. with x = ");
 		QRGS linsys = new QRGS(A);
 		vector x = linsys.solve(b);
+        x.print();
+
 
         var Ax = A*x;
-		WriteLine($"A*x should be equal to b: {b.approx(Ax)}\nwith Ax =");
+		WriteLine($"\nA*x should be equal to b: {b.approx(Ax)}\nwith Ax =");
         Ax.print();
 
 
