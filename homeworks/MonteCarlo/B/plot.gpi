@@ -1,0 +1,14 @@
+set terminal svg
+set key top left
+set output "Plot.svg"
+set xlabel "Number of sampling points N"
+set ylabel "Area A"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set logscale x
+set xrange [5:2e8]
+set title "Area of a unit circle"
+plot 3.1415  title "Real Area Pi"\
+,'Out.txt' index 1 using 1:2:3 pt 7 with yerrorbars title "quasi MC calculated Area"\
+,'Out.txt' index 2 using 1:2:3 pt 2 lc "blue" with  yerrorbars title "plain MC calculated Area"\
