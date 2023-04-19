@@ -26,7 +26,7 @@ public class main{
         double sol_int_2 = quad.integrate(f_2, a, b);
 
         WriteLine($"The integral of 1/sqrt(x) from 0 to 1 is {sol_int_1} with {ncalls_1} evaluations");
-        WriteLine($"The integral of ln(x)/sqrt(x) from 0 to 1 is {sol_int_2} with {ncalls_2} evaluations");
+        WriteLine($"The integral of ln(x)/sqrt(x) from 0 to 1 is {sol_int_2} with {ncalls_2} evaluations\n");
 
 
         ncalls_1 = 0;
@@ -40,9 +40,7 @@ public class main{
 
         WriteLine();
         WriteLine("With Python:");
-        WriteLine("Integral of 1/sqrt(x) is 1.9999999999999984 with 231 evolutions");
-        WriteLine("Integral of ln(x)/sqrt(x) is -4.000000000000075 with 231 evolutions");
-        WriteLine("Python needs less evaluations than the recursive adaptive integrator\nbut more then the Clenshaw Curtis algorithm");
+        WriteLine("Python needs less evaluations than the recursive adaptive integrator\nbut more then the Clenshaw Curtis algorithm\n");
 
     }   
 

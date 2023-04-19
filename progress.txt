@@ -8,8 +8,9 @@ Homeworks:
  - Least Square : A, B, C muss noch aufgeräumt werden
  - spline: A, B - Vergleich fehlt noch, C
  - ODE: A, B - nochmal zweite Variante ausprobieren
- - Integration: A, B - vielleicht Python direkt auslesen
+ - Integration: A, B 
  - MC integration: A, B
+ - Roots: A, 
 
 Grading sheme:
 =======================================

@@ -1,0 +1,14 @@
+--------------------------------------
+Test the root-finder routine by finding the roots of f(x)=x^2-4:
+One root is at 2.00064102511711  (should be at 2) and the other at -2.0022018620533  (should be at -2)
+
+
+Test the root-finder routine by finding the roots of f(x)=(x^2-4, y^2-1):
+One root is at (2.00064102511711, 1.00454545461599)  (should be at (2, 1)) 
+
+
+--------------------------------------
+Find the extrema of the Rosenbrock's Valley function of f(x)=(1-x^2)^2+100(y-x^2)^2:
+The extrema are at (-0.999987507787423, 0.999975015291124) and (1.00001250551865, 1.00002501064571)  (should be at (±1, 1)) 
+
+
