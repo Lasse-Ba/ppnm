@@ -5,20 +5,47 @@ using static System.Console;
 public class main{
 
     public static void Main(){
-        lowest_root();
-        
-    }
-
-    public static double F_E(double r, double e){
         double r_min = 0.001;
         double r_max = 8.0;
 
-        if(r<r_min){
-            return r-r*r_min;
+        double[] initial_cond = new double[]{r_min-r_min*r_min, 1.0-2.0*r_min};
+        vector f_0 = new vector(initial_cond);
+
+        Func<vector,vector> M_r = delegate(vector eps_x){
+            Func<double, vector, vector> r_f = delegate(double r, vector y){
+                double f = y[0];
+                double f_derivative = y[1];
+                vector res = new vector(2);
+                res[0] = f_derivative;
+                res[1] = -2.0*eps_x[0]*f - 2.0*f/r;
+                return res;
+            };
+            vector sol = ode.driver(r_f, r_min, f_0, r_max);
+            return new vector(sol[0]);
+        };
+
+        vector r_init = new vector(-1.0);
+		vector f_r_root = roots.newton(M_r,r_init);
+		double energy = f_r_root[0];
+        f_r_root.print();
+		WriteLine($"Energy is found to be {energy} Hartree, should be -0.5 Hartree\n\n");
+        for(double r=0; r<r_max; r+=1.0/16.0){
+            WriteLine($"{r} {F_e(r,-0.5)}");
         }
 
-        Func<double, vector, vector> r_f = (x,y) => {
-            return new vector(new double[] {y[1], -2.0*(e+1.0/x)*y[0]});
+
+
+        
+    }
+
+    public static double F_e(double r, double E){
+        double r_min = 0.001;
+        if(r<r_min){
+            return r-r*r;
+        }
+
+        Func<double, vector, vector> r_f = (x,y_s) => {
+            return new vector(new double[] {y_s[1], -2.0*(1.0/x + E)*y_s[0]});  
         };
 
         vector y_min = new vector(new double[] {r_min-r_min*r_min, 1-2*r_min});
@@ -26,23 +53,7 @@ public class main{
         return y_max[0];
     }
 
-    public static void lowest_root(){
-        double r_min = 0.001;
-        double r_max = 8.0;
 
-        vector f_0 = new vector(r_min-r_min*r_min, 1.0-2.0*r_min);
-        Func<vector,vector> Mr = delegate(vector epsx){
-			Func<double,vector,vector> r_f = delegate(double r, vector y){
-				double f = y[0], f_deriv = y[1];
-				vector res = new vector(2);
-				res[0] = f_deriv;
-				res[1] = -2.0*epsx[0]*f - 2.0*f/r;
-				return res;
-			};
-        };
-        vector res_lr = ode.driver(Mr, r_min, f_0, r_max);
-        WriteLine("--------------------------------------");
-        WriteLine($"One root is at {res_lr[0]}\n\n");        
+
+    
     }
-
-}

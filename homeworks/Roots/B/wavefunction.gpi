@@ -1,0 +1,12 @@
+set terminal svg
+set key top right
+set output "wavefunctions.svg"
+set xlabel "r [a_0]"
+set ylabel "E"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "Wavefunctions for the first three quantum numbers"
+set xrange [0:8]
+plot 'Out.txt' index 1 using 1:2 with points title "H wavefunction"\
+,x*exp(-x) with lines title "expected"\

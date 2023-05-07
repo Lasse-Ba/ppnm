@@ -1,4 +1,7 @@
-all : Out.txt
+all : Out.txt Wavefunction.svg
+
+Wavefunction.svg : wavefunction.gpi Out.txt
+	gnuplot $<
 
 Out.txt : main.exe 
 	mono $< > $@
