@@ -1,0 +1,22 @@
+Out.txt Higgs.svg: main.exe Makefile higgs.gpi
+	mono main.exe < higgs.data 1> out.txt
+	gnuplot higgs.gpi
+
+main.exe : main.cs minimization.dll vector.dll genlist.dll
+	mcs -target:exe -out:$@ $(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
+
+minimization.dll : minimization.cs vector.dll QRGS.dll genlist.dll
+	mcs -target:library -out:$@ $(filter %.cs,$^) $(addprefix -reference:,$(filter %.dll,$^))
+
+QRGS.dll : ../../LinearEquations/B/QRGS.cs vector.dll
+	mcs -target:library -reference:vector.dll -out:./$@ $<
+
+vector.dll : ../../../matlib/vector/matrix.cs  ../../../matlib/vector/vector.cs
+	mcs -target:library -out:./$@ $^
+
+genlist.dll : ../../../exercises/generic_list/genlist.cs
+	mcs -target:library -out:./$@ $^
+
+
+clean : 
+	rm -f main.exe out.txt

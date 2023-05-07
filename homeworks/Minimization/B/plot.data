@@ -1,0 +1,16 @@
+
+Unhandled Exception:
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at minimization+<fit>c__AnonStorey0.<>m__0 (vector param) [0x0004b] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.numeric_gradient (System.Func`2[T,TResult] f, vector x) [0x00026] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.qnewton (System.Func`2[T,TResult] f, vector x, System.Double acc) [0x00010] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.fit (System.Func`2[T,TResult] f, vector initial_values, genlist`1[T] x, genlist`1[T] y, genlist`1[T] y_err, System.Double acc) [0x00037] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at main.higgs () [0x000b6] in <a894c5d76d7445258a826a2ed7737772>:0 
+  at main.Main () [0x00000] in <a894c5d76d7445258a826a2ed7737772>:0 
+[ERROR] FATAL UNHANDLED EXCEPTION: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+  at minimization+<fit>c__AnonStorey0.<>m__0 (vector param) [0x0004b] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.numeric_gradient (System.Func`2[T,TResult] f, vector x) [0x00026] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.qnewton (System.Func`2[T,TResult] f, vector x, System.Double acc) [0x00010] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at minimization.fit (System.Func`2[T,TResult] f, vector initial_values, genlist`1[T] x, genlist`1[T] y, genlist`1[T] y_err, System.Double acc) [0x00037] in <2c49e72f0e2a4579b541f91e804cf7ed>:0 
+  at main.higgs () [0x000b6] in <a894c5d76d7445258a826a2ed7737772>:0 
+  at main.Main () [0x00000] in <a894c5d76d7445258a826a2ed7737772>:0 

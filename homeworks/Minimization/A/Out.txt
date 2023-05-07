@@ -1,0 +1,11 @@
+--------------------------------------
+Find the extrema of the Rosenbrock's Valley function of f(x)=(1-x^2)^2+100(y-x^2)^2:
+The minimum is at (x,y) = (1.00381651239004, 1.00765697694194) (should be (1,1)),
+starting at (1.1,2) with 16 steps
+--------------------------------------
+Find the minima of the Himmelblau's function of f(x)=(x^2+y-11)^2+(x+y^2-7)^2:
+The minima are at:
+(x,y) = (2.99999182173333, 2.00001627660607) (should be (3,2)), starting at (3.5,1.9) with 6 steps
+(x,y) = (-3.77933427523159, -3.28322575274417) (should be (-3.78,-3.28)), starting at (-3.5,-3.2) with 5 steps
+(x,y) = (-2.80512590107976, 3.13131912472771) (should be (-2.81,3.13)), starting at (-2.8,3.2) with 4 steps
+(x,y) = (3.58439560803691, -1.84810062974307) (should be (3.58,-1.85)), starting at (3.5,-1.9) with 4 steps
