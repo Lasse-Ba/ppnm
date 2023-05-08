@@ -1,0 +1,14 @@
+set terminal svg
+set key top right
+set output "Eps_convergence.svg"
+set xlabel "\espilon"
+set ylabel "E [hartree]"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "epsilon convergence"
+set logscale x
+set format x "10^{%L}"
+set yrange [-0.5001:-0.4994]
+plot 'Out.txt' index 4 using 1:2 with points title "convergence"\
+, -0.5 with lines title "analytical"\

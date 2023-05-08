@@ -1,0 +1,13 @@
+set terminal svg
+set key top right
+set output "R_max_convergence.svg"
+set xlabel "r_max [a_0]"
+set ylabel "E [hartree]"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "r_{min} convergence"
+set xrange [0:10]
+set yrange [-0.6:2.5]
+plot 'Out.txt' index 3 using 1:2 with points title "convergence"\
+, -0.5 with lines title "analytical"\

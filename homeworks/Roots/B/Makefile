@@ -1,7 +1,20 @@
-all : Out.txt Wavefunction.svg
+all : Out.txt Wavefunction.svg R_min_convergence.svg R_max_convergence.svg Eps_convergence.svg Acc_convergence.svg
 
 Wavefunction.svg : wavefunction.gpi Out.txt
 	gnuplot $<
+
+R_min_convergence.svg : r_min_convergence.gpi Out.txt
+	gnuplot $<
+
+R_max_convergence.svg : r_max_convergence.gpi Out.txt
+	gnuplot $<
+
+Eps_convergence.svg : eps_convergence.gpi Out.txt
+	gnuplot $<
+
+Acc_convergence.svg : acc_convergence.gpi Out.txt
+	gnuplot $<
+
 
 Out.txt : main.exe 
 	mono $< > $@

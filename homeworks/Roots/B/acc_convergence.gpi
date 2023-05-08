@@ -1,0 +1,13 @@
+set terminal svg
+set key top right
+set output "Acc_convergence.svg"
+set xlabel "acc"
+set ylabel "E [hartree]"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "abs convergence"
+set logscale x
+set format x "10^{%L}"
+plot 'Out.txt' index 5 using 1:2 with points title "convergence"\
+, -0.5 with lines title "analytical"\
