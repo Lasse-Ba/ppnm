@@ -8,9 +8,9 @@ Homeworks:
  - Least Square : A, B, C muss noch aufgeräumt werden
  - spline: A, B - Vergleich fehlt noch, C
  - ODE: A, B - nochmal zweite Variante ausprobieren
- - Integration: A, B 
- - MC integration: A, B
- - Roots: A, 
+ - Integration: A, B - vergleich mit Plot exercise
+ - MC integration: A, B 
+ - Roots: A, B - acc zeigt keine Veränderung
 
 Grading sheme:
 =======================================
@@ -18,21 +18,21 @@ Grading sheme:
 =======================================
 | 1| LinEqu         | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 2| EigVal         | 6 |   |   |     |
+| 2| EigVal         | 6 | 3 |   |     |
 ---------------------------------------
 | 3| LeastSquares   | 6 | 3 | 1 |  10 |
 ---------------------------------------
 | 4| Splines        | 6 | 3 | 1 |  10 |
 ---------------------------------------
-| 5| ODE            |   |   |   |     |
+| 5| ODE            | 6 | 3 |   |     |
 ---------------------------------------
-| 6| Integration    |   |   |   |     |
+| 6| Integration    |   | 3 |   |     |
 ---------------------------------------
-| 7| Monte Carlo    |   |   |   |     |
+| 7| Monte Carlo    | 6 | 3 |   |     |
 ---------------------------------------
-| 8| Roots          |   |   |   |     |
+| 8| Roots          | 6 |   |   |     |
 ---------------------------------------
-| 9| Optimization   |   |   |   |     |
+| 9| Minimization   | 6 | 3 |   |     |
 ---------------------------------------
 |10| NeurNetwork    |   |   |   |     |
 =======================================

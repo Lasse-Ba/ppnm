@@ -27,7 +27,7 @@ public class main{
         Func<vector, double> f_2 = xy => xy[0];
         vector a_2 = new vector(0,0);
         vector b_2 = new vector(1,2*PI);
-        for(int i=10; i<=100000000; i*=10){
+        for(int i=10; i<=1e7; i*=10){
             var res_2 = mc.quasimc(f_2, a_2, b_2, i);
             WriteLine($"{i} {res_2.Item1} {res_2.Item2}");
         }
@@ -39,9 +39,10 @@ public class main{
         Func<vector, double> f_3 = xy => xy[0];
         vector a_3 = new vector(0,0);
         vector b_3 = new vector(1,2*PI);
-        for(int i=10; i<=100000000; i*=10){
+        for(int i=10; i<=1e7; i*=10){
             var res_3 = mc.plainmc(f_3, a_3, b_3, i);
             WriteLine($"{i} {res_3.Item1} {res_3.Item2}");
         }
+        WriteLine("\n\n The error for the quasi MC stays more or less constant while the error for the plain MC scales with 1/Sqrt(N)");
     }
 }

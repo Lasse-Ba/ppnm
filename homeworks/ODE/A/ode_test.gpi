@@ -8,5 +8,5 @@ set xzeroaxis
 set yzeroaxis
 set xrange [0:10]
 set title "Solution of the ODE u''=-u with the initial conditions y_0=(1,0)"
-plot 'Out.txt' index 0 using 1:2 with lines title "sin(x)"\
-,'Out.txt' index 0 using 1:3 with lines title "cos(x)"
+plot 'Out.txt' index 0 using 1:2 with lines title "cos(x)"\
+,'Out.txt' index 0 using 1:3 with lines title "-sin(x)"

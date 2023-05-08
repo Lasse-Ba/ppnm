@@ -13,6 +13,7 @@ public static class roots{
         vector f_x = f(x);
         double delta = 0.0;
         bool not_converge = true;
+        int itrerations = 0;
 
         while(not_converge){
             for(int i=0; i<n; i++){
@@ -29,7 +30,9 @@ public static class roots{
                 lambda = lambda/2.0;
             }
             x += lambda*dx;
-            not_converge = (f(x)).norm()>eps && (dx).norm()>delta;
+            not_converge = (f(x)).norm()>eps &&  itrerations<100; 
+            f_x = f(x);
+            itrerations++;
         }
 
         return x;

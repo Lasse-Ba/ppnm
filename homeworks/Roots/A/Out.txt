@@ -1,6 +1,6 @@
 --------------------------------------
 Test the root-finder routine by finding the roots of f(x)=x^2-4:
-One root is at 2.00064102511711  (should be at 2) and the other at -2.0022018620533  (should be at -2)
+One root is at 2.00064102511711  (should be at 2) and the other at -2.00000275481554  (should be at -2)
 
 
 Test the root-finder routine by finding the roots of f(x)=(x^2-4, y^2-1):

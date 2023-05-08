@@ -79,10 +79,9 @@ Uncertainties on fitting coefficients (fit to f(x) = c1 + c2*x):
 
 The actual value and the measured differ by:
 lambda = |t_exp - t_measured|/Δt_exp =3.48  
- So they do not agree within the uncertainities.
+So they do not agree within the uncertainities.
 
 Covariance matrix:
 
    0.00115  -0.000178 
  -0.000178   4.83e-05 
-This means, the lifetime from the fit is 68.18% larger than the actual lifetime.

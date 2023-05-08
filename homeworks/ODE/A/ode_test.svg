@@ -146,10 +146,10 @@
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-	<g id="gnuplot_plot_1" ><title>sin(x)</title>
+	<g id="gnuplot_plot_1" ><title>cos(x)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(498.09,381.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >sin(x)</tspan></text>
+		<text><tspan font-family="Arial" >cos(x)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
@@ -175,10 +175,10 @@
 		L538.58,413.40 L541.61,412.91 L544.63,411.71 L547.66,409.82 L550.69,407.25 L553.71,403.99 L556.74,400.07 L559.77,395.51
 		L562.79,390.31 L565.82,384.49  '/></g>
 	</g>
-	<g id="gnuplot_plot_2" ><title>cos(x)</title>
+	<g id="gnuplot_plot_2" ><title>-sin(x)</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(498.09,399.30)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="end">
-		<text><tspan font-family="Arial" >cos(x)</tspan></text>
+		<text><tspan font-family="Arial" >-sin(x)</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
