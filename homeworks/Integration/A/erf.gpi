@@ -8,7 +8,8 @@ set xzeroaxis
 set yzeroaxis
 set yrange [-1.1:1.1]
 set title "Plot of the error function"
-plot 'Out.txt' using 1:2 with lines title "my erf"\
-, 'erf_table.txt' using 1:2 with points pt 1 title "data from Wikipedia"
+plot 'Out.txt' using 1:2 with lines lt -1 lc 'red' lw 2 title "my erf"\
+, 'erf_table.data' using 1:2 with points pt 1 title "data from Wikipedia"\
+, '../../../exercises/plots/erf_data.data' using 1:2 with lines lt 0 lc 'dark-red' lw 2 title "erf from the plot exercise"
 
 

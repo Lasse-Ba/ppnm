@@ -12,7 +12,7 @@ public class main{
         ln_sqrt();
         WriteLine("_______________________________________");
         WriteLine("The error function is plottet in 'erf.svg' together with tabulated values\nfrom Wikipedia. They fit well to each other except at +-1 where the funtion is not\nsmooth because I change the method to calculate the error function.");
-        WriteLine("VGL mit Plot aufgabe fehlt noch");
+        WriteLine("In the plot exercise, the function is smoother at +/-1");
         WriteLine();
         WriteLine();
         erf_data();

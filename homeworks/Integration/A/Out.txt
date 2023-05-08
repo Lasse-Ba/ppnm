@@ -8,7 +8,7 @@ _______________________________________
 The error function is plottet in 'erf.svg' together with tabulated values
 from Wikipedia. They fit well to each other except at +-1 where the funtion is not
 smooth because I change the method to calculate the error function.
-VGL mit Plot aufgabe fehlt noch
+In the plot exercise, the function is smoother at +/-1
 
 
 -3.5 -0.999999338329936

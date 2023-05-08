@@ -1,15 +1,16 @@
 My progress:
 Exercises:
- - Complex Gamma aufräumen
+ - hello ✓
+ - math ✓
+ - epsilon ✓
+ - vec ✓
+ - input/output ✓
+ - complex ✓
+ - generic list ✓
+ - multiprocessing ✓
+ - plots ✓
 
 Homeworks:
- - Linear Equations: A, B, C
- - Eigenvalues: A, B - vielleicht noch etwas dazu schreiben
- - Least Square : A, B, C muss noch aufgeräumt werden
- - spline: A, B - Vergleich fehlt noch, C
- - ODE: A, B - nochmal zweite Variante ausprobieren
- - Integration: A, B - vergleich mit Plot exercise
- - MC integration: A, B 
  - Roots: A, B - acc zeigt keine Veränderung
 
 Grading sheme:
@@ -26,7 +27,7 @@ Grading sheme:
 ---------------------------------------
 | 5| ODE            | 6 | 3 |   |     |
 ---------------------------------------
-| 6| Integration    |   | 3 |   |     |
+| 6| Integration    | 6 | 3 |   |     |
 ---------------------------------------
 | 7| Monte Carlo    | 6 | 3 |   |     |
 ---------------------------------------
