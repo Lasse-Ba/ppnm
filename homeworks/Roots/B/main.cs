@@ -20,7 +20,7 @@ public class main{
 
         double[] initial_cond = new double[]{r_min-r_min*r_min, 1.0-2.0*r_min};
         vector f_0 = new vector(initial_cond);
-        for(double i=1e-6; i<10.0; i*=1.1){
+        for(double i=1e-3; i<1.0; i*=1.1){
             double abs = i;
             Func<vector,vector> M_r = delegate(vector eps_x){
                 Func<double, vector, vector> r_f = delegate(double r, vector y){
@@ -31,7 +31,7 @@ public class main{
                     res[1] = -2.0*eps_x[0]*f - 2.0*f/r;
                     return res;
                 };
-                vector sol = ode.driver(r_f, r_min, f_0, r_max, acc:abs, eps:0.1);
+                vector sol = ode.driver(r_f, r_min, f_0, r_max, acc:abs, eps:0.01);
                 return new vector(sol[0]);
             };
 

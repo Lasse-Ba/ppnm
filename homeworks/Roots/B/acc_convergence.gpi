@@ -6,8 +6,9 @@ set ylabel "E [hartree]"
 set tics out
 set xzeroaxis
 set yzeroaxis
-set title "abs convergence"
+set title "acc convergence"
 set logscale x
 set format x "10^{%L}"
+set yrange [-0.5002:-0.4995]
 plot 'Out.txt' index 5 using 1:2 with points title "convergence"\
 , -0.5 with lines title "analytical"\
