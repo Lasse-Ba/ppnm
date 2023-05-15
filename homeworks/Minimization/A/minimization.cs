@@ -76,53 +76,5 @@ public static class minimization{
         return (x,steps);
     }
 
-    /*
-    public static (vector, int) qnewton(
-        Func<vector,double> f,
-        vector x,
-        double acc = 0.01,
-        matrix B = null,
-        int steps = 0
-    ){
-        double Delta = Pow(2,-26);
-        double epsilon = Pow(1,-6);
-
-        double f_x = f(x);
-        vector grad_x = numeric_gradient(f,x);
-        if (B == null){
-			B = matrix.id(x.size);
-		}
-        if(grad_x.dot(grad_x)<acc){
-            return (x,steps);
-        }
-        
-        double lambda = 1.0;
-        vector del_x = -B*grad_x;
-        while(true){
-            if( f(x+del_x)<f(x) ){     
-                var lamb_del = lambda*del_x;
-                x = x + lamb_del;
-                var diff = numeric_gradient(f,x+lamb_del) - numeric_gradient(f,x);
-                var u = lamb_del-B*diff;
-                var gamma = (u.dot(diff))/(2.0*lamb_del.dot(diff));
-                if(Abs(lamb_del.dot(diff))>epsilon){
-                    var a = (u-gamma*lamb_del)/(lamb_del.dot(diff));
-                    B.update(a,lamb_del);
-                    B.update(lamb_del,a);
-                };
-                break;
-            };
-
-            lambda = lambda/2.0;
-            if(lambda<1.0/64){
-                var lamb_del = lambda*del_x;
-                x = x + lamb_del;
-                B.set_identity();
-                break;
-            }; 
-        };
-        return qnewton(f, x, acc, B, steps+1);
-    }
-    */
 
 }

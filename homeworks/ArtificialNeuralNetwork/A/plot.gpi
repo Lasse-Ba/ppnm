@@ -1,0 +1,12 @@
+set terminal svg
+set key top right
+set output "Plot.svg"
+set xlabel "x"
+set ylabel "f(x)"
+set tics out
+set xzeroaxis
+set yzeroaxis
+set title "ANN approximation of Cos(5x-1)*Exp(-x^2)"
+set xrange [-1.1:1.1]
+plot 'Out.txt' index 0 using 1:2 with points title "Given Points"\
+,'Out.txt' index 1 using 1:2 with lines title "ANN"\
