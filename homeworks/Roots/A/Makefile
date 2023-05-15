@@ -15,7 +15,7 @@ QRGS.dll : ../../LinearEquations/B/QRGS.cs vector.dll
 	mcs -target:library -reference:vector.dll -out:./$@ $<
 
 vector.dll : ../../../matlib/vector/matrix.cs  ../../../matlib/vector/vector.cs
-	mcs -target:library -out:$@ $^
+	mcs -target:library -out:./$@ $^
 
 clean:
 	rm -f *.exe *.dll *.txt
