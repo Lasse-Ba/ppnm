@@ -40,7 +40,7 @@ public class main{
         network.train(x_s,y_s);
         
         for(int i = 0; i<1000; i++){
-            double x_i = -1.0 + 2.0*i/999.0;
+            double x_i = -3.0 + 6.0*i/999.0;
             double y_i = network.response(x_i);
             WriteLine($"{x_i} {y_i}");
         };
