@@ -1,5 +1,5 @@
 set terminal svg
-set term svg size 800, 400
+set term svg size 800, 800
 set key outside
 set output "Plot.svg"
 set xlabel "x"
@@ -10,10 +10,10 @@ set yzeroaxis
 set title "ANN approximation of Cos(5x-1)e^{-x^2}\n It is shown in the fitted range [-1,1] and outside of it to see the behaviour of the function\n further investigations about the #datapoints and #neurons would be interesting "
 set xrange [-1.1:1.1]
 plot 'Out.txt' index 0 using 1:2 with points title "Given Points"\
-,'Out.txt' index 1 using 1:2 with lines title "ANN"\
-, 'Out.txt' index 2 using 1:2 with lines title "Cos(5x-1)e^{-x^2}"\
-, 'Out.txt' index 3 using 1:2 with lines title "ANN first derivative"\
-, 'Out.txt' index 4 using 1:2 with lines title "analytical first derivative"\
-, 'Out.txt' index 5 using 1:2 with lines title "ANN second derivative"\
-, 'Out.txt' index 6 using 1:2 with lines title "analytical second derivative"\
-, 'Out.txt' index 7 using 1:2 with lines title "ANN antiderivative"\
+, 'Out.txt' index 2 using 1:2 with lines lt -1 lc 'light-blue' lw 2 title "Cos(5x-1)e^{-x^2}"\
+, 'Out.txt' index 1 using 1:2 with lines lt 0 lc 'blue' lw 2 title  "ANN"\
+, 'Out.txt' index 4 using 1:2 with lines lt -1 lc 'light-red' lw 2 title "analytical first derivative"\
+, 'Out.txt' index 3 using 1:2 with lines lt 0 lc 'dark-red' lw 2 title  "ANN first derivative"\
+, 'Out.txt' index 6 using 1:2 with lines lt -1 lc 'light-green' lw 2 title "analytical second derivative"\
+, 'Out.txt' index 5 using 1:2 with lines lt 0 lc 'dark-green' lw 2 title  "ANN second derivative"\
+, 'Out.txt' index 7 using 1:2 with lines lt -1 lc 'orange' lw 2 title "ANN antiderivative"

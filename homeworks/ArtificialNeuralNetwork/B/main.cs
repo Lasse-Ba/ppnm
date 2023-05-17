@@ -13,9 +13,6 @@ public class main{
         Func<double,double> g_2 = delegate(double x){
             return Exp(-x*x)*( 20.0*x*Sin(5.0*x-1.0) + (4.0*x*x-27.0)*Cos(5.0*x-1.0)); 
         };
-        Func<double,double> g_G = delegate(double x){
-            return Cos(5*x-1.0)*Exp(-x*x);
-        };
 
         int n=10;
         var network = new ann(n);
