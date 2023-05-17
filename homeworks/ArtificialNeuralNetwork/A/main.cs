@@ -4,23 +4,6 @@ using static System.Console;
 
 public class main{
     public static void Main(){
-        /*
-        var network = new ann(10); // Create an ANN with 10 hidden neurons
-        vector x = new vector(-1, -0.5, 0, 0.5, 1); // Example input points
-        vector y = new vector(x.size); // Example target outputs
-
-        // Fill y with the corresponding target values
-        for (int i = 0; i < x.size; i++)
-        {
-            y[i] = Cos(5 * x[i] - 1) * Exp(-x[i] * x[i]);
-        }
-
-        network.train(x, y); // Train the network
-
-        // Test the network's response for a new input
-        double input = 0.2;
-        double output = network.response
-        */
         Func<double,double> g = delegate(double x){
             return Cos(5*x-1.0)*Exp(-x*x);
         };
@@ -43,6 +26,12 @@ public class main{
             double x_i = -3.0 + 6.0*i/999.0;
             double y_i = network.response(x_i);
             WriteLine($"{x_i} {y_i}");
+        };
+        WriteLine("\n\n");
+        for(int j = 0; j<1000; j++){
+            double x_j = -3.0 + 6.0*j/999.0;
+            double y_j = g(x_j);
+            WriteLine($"{x_j} {y_j}");
         };
         
     }

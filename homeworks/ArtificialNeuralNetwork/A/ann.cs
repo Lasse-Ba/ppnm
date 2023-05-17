@@ -13,6 +13,7 @@ public class ann{
         p = new vector(3 * n); // ai, bi, and wi for each hidden neuron
     }
 
+    
     public ann(vector p){
         this.n = p.size/3;
         this.p = p;
