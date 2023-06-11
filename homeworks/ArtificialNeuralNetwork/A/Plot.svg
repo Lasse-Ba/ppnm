@@ -460,7 +460,7 @@
 		<text><tspan font-family="Arial" > It is shown in the fitted range [-1,1] and outside of it to see the behaviour of the function</tspan></text>
 	</g>
 	<g transform="translate(323.67,66.91)" stroke="none" fill="black" font-family="Arial" font-size="12.00"  text-anchor="middle">
-		<text><tspan font-family="Arial" > further investigations about the #datapoints and #neurons would be interesting </tspan></text>
+		<text><tspan font-family="Arial" > further investigations about the number of datapoints/neurons would be interesting </tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
