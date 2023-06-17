@@ -36,3 +36,6 @@ Homework:
 =======================================
 |total:                            93 |
 =======================================
+
+Exam: 8 Adaptive two-dimensional integrator:
+        I would give myself 9/10 points as explained in the README file belonging to the exam
