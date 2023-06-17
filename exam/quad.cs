@@ -14,6 +14,7 @@ public static class quad{
         return (b - a) * w;
     }
 
+    
     public static double d(double x)
     {
         return x;
@@ -23,6 +24,7 @@ public static class quad{
     {
         return x*x;
     }
+    
 
 
     public static double Driver1D(
@@ -32,37 +34,36 @@ public static class quad{
         double b, 
         double acc, 
         double eps,
-        double two, 
-        double three, 
+        double f2, 
+        double f3, 
         double[] high, 
         double[] low, 
         double[] xs)
     {
-        double one = f(x, x_t(xs[0], a, b));
-        double four = f(x, x_t(xs[3], a, b));
-        double Q = w(high[0], a, b) * one + w(high[1], a, b) * two + w(high[2], a, b) * three + w(high[3], a, b) * four;
-        double q = w(low[0], a, b) * one + w(low[1], a, b) * two + w(low[2], a, b) * three + w(low[3], a, b) * four;
-        double err = Math.Abs(Q - q);
-        if (err < acc + eps * Math.Abs(Q))
+        double f1 = f(x, x_t(xs[0], a, b));
+        double f4 = f(x, x_t(xs[3], a, b));
+        double Q = w(high[0], a, b) * f1 + w(high[1], a, b) * f2 + w(high[2], a, b) * f3 + w(high[3], a, b) * f4;
+        double q = w(low[0], a, b) * f1 + w(low[1], a, b) * f2 + w(low[2], a, b) * f3 + w(low[3], a, b) * f4;
+        double err = Abs(Q - q);
+        if (err < acc + eps * Abs(Q))
         {
             return Q;
         }
         else
         {
-            return Driver1D(f, x, a, (a + b) / 2, acc / Math.Sqrt(2.0), eps, one, two, high, low, xs) +
-                   Driver1D(f, x, (a + b) / 2, b, acc / Math.Sqrt(2.0), eps, three, four, high, low, xs);
+            return Driver1D(f, x, a, (a+b)/2, acc/Sqrt(2), eps, f1, f2, high, low, xs) +
+                   Driver1D(f, x, (a+b)/2, b, acc/Sqrt(2), eps, f3, f4, high, low, xs);
         }
     }
 
-    // RECURSIVE INTEGRATION FUNCTION 2D
     public static double Driver2D(
         Func<double, double, double> f,
         double a, 
         double b, 
         double acc, 
         double eps,
-        double two,
-        double three,
+        double f2,
+        double f3,
         double[] high,
         double[] low,
         double[] xs,
@@ -76,21 +77,21 @@ public static class quad{
         double a4 = d(x4);
         double b4 = u(x4);
 
-        double one = Driver1D(f, x1, a1, b1, acc, eps, f(x1, x_t(xs[1], a1, b1)), f(x1, x_t(xs[2], a1, b1)), high, low, xs);
-        double four = Driver1D(f, x4, a4, b4, acc, eps, f(x4, x_t(xs[1], a4, b4)), f(x4, x_t(xs[2], a4, b4)), high, low, xs);
-        double Q = w(high[0], a, b) * one + w(high[1], a, b) * two + w(high[2], a, b) * three + w(high[3], a, b) * four;
-        double q = w(low[0], a, b) * one + w(low[1], a, b) * two + w(low[2], a, b) * three + w(low[3], a, b) * four;
-        double err = Math.Abs(Q - q);
+        double f1 = Driver1D(f, x1, a1, b1, acc, eps, f(x1, x_t(xs[1], a1, b1)), f(x1, x_t(xs[2], a1, b1)), high, low, xs);
+        double f4 = Driver1D(f, x4, a4, b4, acc, eps, f(x4, x_t(xs[1], a4, b4)), f(x4, x_t(xs[2], a4, b4)), high, low, xs);
+        double Q = w(high[0], a, b) * f1 + w(high[1], a, b) * f2 + w(high[2], a, b) * f3 + w(high[3], a, b) * f4;
+        double q = w(low[0], a, b) * f1 + w(low[1], a, b) * f2 + w(low[2], a, b) * f3 + w(low[3], a, b) * f4;
+        double err = Abs(Q - q);
 
-        if (err < acc + eps * Math.Abs(Q))
+        if (err < acc + eps * Abs(Q))
         {
             error += err;
             return Q;
         }
         else
         {
-            return Driver2D(f, a, (a + b) / 2, acc / Math.Sqrt(2.0), eps, one, two, high, low, xs, ref error) +
-                   Driver2D(f, (a + b) / 2, b, acc / Math.Sqrt(2.0), eps, three, four, high, low, xs, ref error);
+            return Driver2D(f, a, (a+b)/2, acc/Sqrt(2), eps, f1, f1, high, low, xs, ref error) +
+                   Driver2D(f, (a+b)/2, b, acc/Sqrt(2), eps, f3, f4, high, low, xs, ref error);
         }
     }
 
@@ -123,7 +124,7 @@ public static class quad{
 
         estimate = Driver2D(f, a, b, acc, eps, start2, start3, Higher_order, Lower_order, interval_points, ref error);
 
-        return Tuple.Create(estimate, Math.Sqrt(error));
+        return Tuple.Create(estimate, Sqrt(error));
     }
 
 
