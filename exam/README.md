@@ -1,9 +1,11 @@
 # Examination project for the lecture PPNM at AU in 2023.
 My student number ends with 60, therefore is my project
-    60 % 26 = 8 
+    60 mod 26 = 8 
 
 **Adaptive two-dimensional integrator**
 Implement a two-dimensional integrator for integrals in the form
+
+$$\int_a^b dx \int_{d(x)}^{u(x)} dy f(x,y)$$
 
 ∫abdx ∫_d(x)^u(x)dy f(x,y)
 
