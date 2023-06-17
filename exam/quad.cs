@@ -6,12 +6,12 @@ public static class quad{
 
     public static double x_t(double t, double a, double b)
     {
-        return a + (b - a) * t;
+        return a+(b-a)*t;
     }
 
     public static double w(double w, double a, double b)
     {
-        return (b - a) * w;
+        return (b-a)*w;
     }
 
     
@@ -42,10 +42,10 @@ public static class quad{
     {
         double f1 = f(x, x_t(xs[0], a, b));
         double f4 = f(x, x_t(xs[3], a, b));
-        double Q = w(high[0], a, b) * f1 + w(high[1], a, b) * f2 + w(high[2], a, b) * f3 + w(high[3], a, b) * f4;
-        double q = w(low[0], a, b) * f1 + w(low[1], a, b) * f2 + w(low[2], a, b) * f3 + w(low[3], a, b) * f4;
-        double err = Abs(Q - q);
-        if (err < acc + eps * Abs(Q))
+        double Q = w(high[0], a, b)*f1 + w(high[1], a, b)*f2 + w(high[2], a, b)*f3 + w(high[3], a, b)*f4;
+        double q = w(low[0], a, b)*f1 + w(low[1], a, b)*f2 + w(low[2], a, b)*f3 + w(low[3], a, b)*f4;
+        double err = Abs(Q-q);
+        if (err < acc + eps*Abs(Q))
         {
             return Q;
         }
@@ -66,8 +66,7 @@ public static class quad{
         double f3,
         double[] high,
         double[] low,
-        double[] xs,
-        ref double error)
+        double[] xs)
     {
         double x1 = x_t(xs[0], a, b);
         double a1 = d(x1);
@@ -79,23 +78,22 @@ public static class quad{
 
         double f1 = Driver1D(f, x1, a1, b1, acc, eps, f(x1, x_t(xs[1], a1, b1)), f(x1, x_t(xs[2], a1, b1)), high, low, xs);
         double f4 = Driver1D(f, x4, a4, b4, acc, eps, f(x4, x_t(xs[1], a4, b4)), f(x4, x_t(xs[2], a4, b4)), high, low, xs);
-        double Q = w(high[0], a, b) * f1 + w(high[1], a, b) * f2 + w(high[2], a, b) * f3 + w(high[3], a, b) * f4;
-        double q = w(low[0], a, b) * f1 + w(low[1], a, b) * f2 + w(low[2], a, b) * f3 + w(low[3], a, b) * f4;
+        double Q = w(high[0], a, b)*f1 + w(high[1], a, b)*f2 + w(high[2], a, b)*f3 + w(high[3], a, b)*f4;
+        double q = w(low[0], a, b)*f1 + w(low[1], a, b)*f2 + w(low[2], a, b)*f3 + w(low[3], a, b)*f4;
         double err = Abs(Q - q);
 
         if (err < acc + eps * Abs(Q))
         {
-            error += err;
             return Q;
         }
         else
         {
-            return Driver2D(f, a, (a+b)/2, acc/Sqrt(2), eps, f1, f1, high, low, xs, ref error) +
-                   Driver2D(f, (a+b)/2, b, acc/Sqrt(2), eps, f3, f4, high, low, xs, ref error);
+            return Driver2D(f, a, (a+b)/2, acc/Sqrt(2), eps, f1, f1, high, low, xs) +
+                   Driver2D(f, (a+b)/2, b, acc/Sqrt(2), eps, f3, f4, high, low, xs);
         }
     }
 
-    public static Tuple<double, double> Integrate2D(
+    public static double Integrate2D(
         Func<double, double, double> f,
         double a, 
         double b, 
@@ -104,12 +102,11 @@ public static class quad{
         double acc,
         double eps)
     {
-        double[] Higher_order = { 2.0 / 6, 1.0 / 6, 1.0 / 6, 2.0 / 6 };
-        double[] Lower_order = { 1.0 / 4, 1.0 / 4, 1.0 / 4, 1.0 / 4 };
-        double[] interval_points = { 1.0 / 6, 2.0 / 6, 4.0 / 6, 5.0 / 6 };
+        double[] Higher_order = { 2.0/6, 1.0/6, 1.0/6, 2.0/6 };
+        double[] Lower_order = { 1.0/4, 1.0/4, 1.0/4, 1.0/4 };
+        double[] interval_points = { 1.0/6, 2.0/6, 4.0/6, 5.0/6 };
 
         double estimate = 0;
-        double error = 0;
 
         double x2 = x_t(interval_points[1], a, b);
         double a2 = d(x2);
@@ -119,12 +116,12 @@ public static class quad{
         double a3 = d(x3);
         double b3 = u(x3);
 
-        double start2 = Driver1D(f, x2, a2, b2, acc, eps, f(x2, x_t(interval_points[1], a2, b2)), f(x2, x_t(interval_points[2], a2, b2)),Higher_order,Lower_order,interval_points);
-        double start3 = Driver1D(f, x3, a3, b3, acc, eps, f(x3, x_t(interval_points[1], a3, b3)), f(x3, x_t(interval_points[2], a3, b3)),Higher_order,Lower_order,interval_points);
+        double start2 = Driver1D(f, x2, a2, b2, acc, eps, f(x2, x_t(interval_points[1], a2, b2)), f(x2, x_t(interval_points[2], a2, b2)), Higher_order, Lower_order, interval_points);
+        double start3 = Driver1D(f, x3, a3, b3, acc, eps, f(x3, x_t(interval_points[1], a3, b3)), f(x3, x_t(interval_points[2], a3, b3)), Higher_order, Lower_order, interval_points);
 
-        estimate = Driver2D(f, a, b, acc, eps, start2, start3, Higher_order, Lower_order, interval_points, ref error);
+        estimate = Driver2D(f, a, b, acc, eps, start2, start3, Higher_order, Lower_order, interval_points);
 
-        return Tuple.Create(estimate, Sqrt(error));
+        return estimate;
     }
 
 

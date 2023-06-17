@@ -20,7 +20,8 @@ public class main{
         double acc = 1e-8;
         double eps = 1e-8;
         var result= quad.Integrate2D(f,a,b,d,u,acc, eps);
-        WriteLine($"{result.Item1} {result.Item2}");
+        //WriteLine($"{result.Item1} {result.Item2}");
+        WriteLine($"{result}");
     
 
     }
