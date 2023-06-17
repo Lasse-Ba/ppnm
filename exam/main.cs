@@ -23,7 +23,7 @@ public class main{
         double eps = 1e-8;
         var result= quad.Integrate2D(f,a,b,d,u,acc, eps);
         //WriteLine($"{result.Item1} {result.Item2}");
-        WriteLine($"f(x,y) = xy integrated results in {result} (should be -1/24≈0-0.041667)\n\n");
+        WriteLine($"f(x,y) = xy integrated results in ({result.Item1}±{result.Item2}) (should be -1/24≈0-0.041667)\n\n");
     }
 
     public static void integrate_test_2(){
@@ -36,7 +36,7 @@ public class main{
         double eps = 1e-8;
         var result= quad.Integrate2D(f,a,b,d,u,acc, eps);
         //WriteLine($"{result.Item1} {result.Item2}");
-        WriteLine($"f(x,y) = exp(y)*sin(x) integrated results in {result} (should be -0.130586)\n\n");
+        WriteLine($"f(x,y) = exp(y)*sin(x) integrated results in ({result.Item1}±{result.Item2}) (should be -0.130586)\n\n");
     }
 
     public static void integrate_test_3(){
@@ -49,6 +49,7 @@ public class main{
         double eps = 1e-8;
         var result= quad.Integrate2D(f,a,b,d,u,acc, eps);
         //WriteLine($"{result.Item1} {result.Item2}");
-        WriteLine($"f(x,y) = -y - x*x + y*y*Cos(x)*Cos(x) integrated results in {result} (should be 0.096008)\n\n");
+        WriteLine($"f(x,y) = -y - x*x + y*y*Cos(x)*Cos(x) integrated results in ({result.Item1}±{result.Item2}) (should be 0.096008)\n\n");
     }
+    
 }

@@ -15,11 +15,12 @@ The integrator consists of three subroutines. First of all, the 2d - integrator,
 
 I tested the integrator for several functions and checked the results with Wolframalpha or calculated them, if possible, analytically.
 
+Additionally, I added an error estimation for the integral, which is given by the difference between trapezium and rectangle rule.
+
 
 ### Self-evaluation
 I would give myself a 9/10. My two-dimensional integrator integrates the function as it should and fulfills the exercise,
 but I see points for further improvement, especially that the functions for the lower and upper limit u(x) and d(x) has 
-to be defined in both files, *quad.cs* and *main.cs*.
+to be defined in both files, *quad.cs* and *main.cs*. Though, I included an error approximation which wasn't explicitely asked for.
 
-For further improvement one could include a Clenshaw–Curtis variable transformation like in the homework as well as an
-error estimation.
+For further improvement one could include a Clenshaw–Curtis variable transformation like in the homework.
