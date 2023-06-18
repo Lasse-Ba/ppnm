@@ -11,16 +11,16 @@ which applies your favourite adaptive one-dimensional integrator along each of t
 
 ### Short describtion of my project
 
-The integrator consists of three subroutines. First of all, the 2d - integrator, which takes the arguments from *main.cs*. The Driver2d routine is a recursive adaptive integrator, which integrates the function adaptive, using the trapezium and rectangle rule. In each recursion, the Driver1D is called, which is similiar to the integrator from the homework and integrates the function for a given $x$.
+The integrator consists of three subroutines. First of all, the 2d - integrator *integ2D*, which takes the arguments from *main.cs*. The *integrator2d* routine is a recursive adaptive integrator, which integrates the function adaptive, using the trapezium and rectangle rule. In each recursion, the *integrator1d* is called, which is similiar to the integrator from the homework and integrates the function for a given $x$.
+
+In *main.cs*, one defines the function which should be integrated, the boundaries as fixed values or functions, and the accuracy/precision.
 
 I tested the integrator for several functions and checked the results with Wolframalpha or calculated them, if possible, analytically.
 
-Additionally, I added an error estimation for the integral, which is given by the difference between trapezium and rectangle rule.
+Additionally, I added an error estimation for the integral, which is given by the root of the difference between trapezium and rectangle rule.
 
 
 ### Self-evaluation
-I would give myself a 9/10. My two-dimensional integrator integrates the function as it should and fulfills the exercise,
-but I see points for further improvement, especially that the functions for the lower and upper limit u(x) and d(x) has 
-to be defined in both files, *quad.cs* and *main.cs*. Though, I included an error approximation which wasn't explicitely asked for.
+I would give myself 10 points for this exercise. My two-dimensional integrator integrates the function as it should and fulfills the exercise, if I have not overlooked anything. Furthermore I included an error estiation.
 
-For further improvement one could include a Clenshaw–Curtis variable transformation like in the homework.
+For further improvement one could include a Clenshaw–Curtis variable transformation and count the number of evalutations like in the homework.

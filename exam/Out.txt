@@ -1,11 +1,14 @@
-_______________________________________
-Compute different integrals for x∈[0,1] and y∈[x,x^2]
-f(x,y) = xy integrated results in (-0.0416665734120329±0.000384621840564815) (should be -1/24≈0-0.041667)
+Compute different integrals I=∫dx∫dy f(x,y):
+
+f(x,y) = xy integrated over x∈[0,1] and y∈[x,x^2] results in 
+I=(-0.04166±0.0022) (should be -1/24≈-0.04167)
 
 
-f(x,y) = exp(y)*sin(x) integrated results in (-0.130585427061863±0.000432098253724998) (should be -0.130586)
+f(x,y) = exp(y)*sin(x) integrated over x∈[0,1] and y∈[-sin(x),exp(x)] results in
+I=(-3.38641±0.05759) (should be 3.39164)
 
 
-f(x,y) = -y - x*x + y*y*Cos(x)*Cos(x) integrated results in (0.0960077443089197±0.000423827168848521) (should be 0.096008)
+f(x,y) = -y - x*x + y*y*Cos(x)*Cos(x) integrated over x∈[0.5,1] and y∈[Sqrt(x),5] results in
+I=(3.81191±0.05173) (should be 3.80859)
 
 
