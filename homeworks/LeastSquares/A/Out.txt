@@ -71,6 +71,6 @@
 15.75 9.73213997842049
 
 
-Half-life time from fit for 224-Ra: 5.8862627353507 days
+Half-life time from fit for 224-Ra: 4.08004641904341 days
 Half-life of 224-Ra is actually 3.5 days, according to PubChem.
-This means, the lifetime from the fit is 68.18% larger than the actual lifetime.
+This means, the lifetime from the fit is 16.57% larger than the actual lifetime.

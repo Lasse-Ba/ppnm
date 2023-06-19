@@ -45,9 +45,9 @@ class main{
         
         
         		
-        WriteLine($"Half-life time from fit for 224-Ra: {-1/coeffs[1]} days");	
+        WriteLine($"Half-life time from fit for 224-Ra: {-Log(2)/coeffs[1]} days");	
 		WriteLine("Half-life of 224-Ra is actually 3.5 days, according to PubChem.");
-        WriteLine($"This means, the lifetime from the fit is {Round(((-1/coeffs[1]-3.5)/3.5)*100, 2)}% larger than the actual lifetime.");
+        WriteLine($"This means, the lifetime from the fit is {Round(((-Log(2)/coeffs[1]-3.5)/3.5)*100, 2)}% larger than the actual lifetime.");
 
 
     }
